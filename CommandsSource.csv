@@ -1,0 +1,12 @@
+CT,2,Cria tabela
+RT,1,Remove tabela
+AT,1,Resumo da tabela
+LT,0,Lista todas as tabelas
+IR,2,Insere registro
+BR,3,Busca registro
+AR,1,Apresenta registro da ultima busca
+RR,1,Remove todos registros da ultima busca
+CI,3,Cria indice
+RI,2,Remove indice
+GI,2,Gera indice
+EB,0,Encerra programa

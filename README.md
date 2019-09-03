@@ -9,6 +9,10 @@ a very *smol* c++ based dbms
 - `data/metadata.dat` Arquivo binário com os metadados do banco de dados
 ### Worker
 - `workers/` Diretório que armazena a implementação dos diferentes setores de ação que o DBMS executará
+- `workers/Broker.cpp`
+    - Gerencia o dispatch table e interfaceia os workers
+- `workers/Result.cpp`
+    - Define estrutura do resultado que os workers enviam
 - `workers/TableWorker.cpp`
     - Interfaceia as ações de gerenciamento de tabelas
 - `Commands.cpp`

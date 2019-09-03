@@ -5,38 +5,28 @@
 #include <string>
 #include <functional>
 
+#include "Result.cpp"
+#include "TableWorker.cpp"
 #include "../Commands.cpp"
 
 using namespace std;
 
-class Result {
-public:
-    string status;
-    Result(string status) {
-        this->status = status;
-    }
-};
-
-Result createTable(vector<string> args) {
-    for(int i = 0; i < args.size(); i++) {
-        cout << args[i] << endl;
-    }
-    return Result("yes");
-}
-
-// Function map
-using workerFunction = function<Result(vector<string>)>;
+// Dispatch table
+using workerFunction = function<Result(vector<string>, Database&)>;
 map<string, workerFunction> dispatchTable = {
-    { "CT", createTable }
+    { "CT", createTable },
+    { "RT", removeTable },
+    { "AT", showTable },
+    { "LT", listTables }
 };
 
 class Broker{
 public:
-    static Result resolve(Command command){
-        return dispatchTable.find(command.command)->second(command.arguments);
+    static Result resolve(Command command, Database& context){
+        Result result = dispatchTable.find(command.command)->second(command.arguments, context);
+        context.save();
+        return result;
     }
 };
-
-
 
 #endif

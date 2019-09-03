@@ -5,8 +5,9 @@ a very *smol* c++ based dbms
 ### Data
 - `data/` Diretório que armazena os dados binários no sistema de arquivos
 - `data/tables` Diretório que armazena os dados binários das tabelas
-- `data/tables/{tableName}.dat` Arquivo binário da tabela
-- `data/metadata.dat` Arquivo binário com os metadados do banco de dados
+- `data/tables/{tableName}.header` Arquivo com os metadados da tabela
+- `data/tables/{tableName}.data` Arquivo com os dados da tabela
+- `data/database.header` Arquivo com os metadados do banco de dados
 ### Worker
 - `workers/` Diretório que armazena a implementação dos diferentes setores de ação que o DBMS executará
 - `workers/Broker.cpp`

@@ -1,5 +1,5 @@
 # LilSQL
-a very *smol* c++ based dbms
+a very *small* c++ based dbms
 
 ## Estrutura de diretórios
 ### Data
